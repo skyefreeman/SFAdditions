@@ -9,5 +9,4 @@
 #import "SFAdditions.h"
 
 @implementation SFAdditions
-
 @end
