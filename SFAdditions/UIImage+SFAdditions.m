@@ -11,8 +11,14 @@
 @implementation UIImage (SFAdditions)
 
 + (UIImage*)imageWithColor:(UIColor *)color withSize:(CGSize)size withCornerRadius:(CGFloat)radius {
-    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    UIImage *image = [UIImage imageWithColor:color withSize:size];
+    [image setCornerRadius:radius];
+    return image;
+}
 
++ (UIImage*)imageWithColor:(UIColor *)color withSize:(CGSize)size {
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [color CGColor]);
@@ -20,19 +26,19 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    UIGraphicsBeginImageContext(size);
+    return image;
+}
+
+- (UIImage*)setCornerRadius:(CGFloat)radius {
+    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
+    
+    UIGraphicsBeginImageContext(rect.size);
     [[UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius] addClip];
-    [image drawInRect:rect];
-    image = UIGraphicsGetImageFromCurrentImageContext();
+    [self drawInRect:rect];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     return image;
 }
-
-+ (UIImage*)imageWithColor:(UIColor *)color withSize:(CGSize)size {
-    return [UIImage imageWithColor:color withSize:size withCornerRadius:0];
-}
-
-- (void)setCorner
 
 @end
