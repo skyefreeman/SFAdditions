@@ -7,13 +7,12 @@
 
 #import <MapKit/MapKit.h>
 
-@interface MKMapView (SFAdditions)
-
-// Map zooming
+@interface MKMapView (Zooming)
 - (void)zoomToUserWithRadius:(CGFloat)radius animated:(BOOL)animated;
 - (void)zoomToRadius:(CGFloat)radius animated:(BOOL)animated;
 - (void)zoomToLocation:(CLLocationCoordinate2D)location radius:(CGFloat)radius animated:(BOOL)animated;
+@end
 
-// Conversion
+@interface MKMapView (Conversions)
 + (CGFloat)milesToMeters:(CGFloat)miles;
 @end

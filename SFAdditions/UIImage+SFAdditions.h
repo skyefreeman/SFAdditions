@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (SFAdditions)
-+ (UIImage *)imageFromColor:(UIColor *)color forSize:(CGSize)size withCornerRadius:(CGFloat)radius;
++ (UIImage *)imageWithColor:(UIColor *)color withSize:(CGSize)size withCornerRadius:(CGFloat)radius;
 @end

@@ -31,4 +31,7 @@
 
 // Navigation Bar
 - (CGFloat)navigationBarHeight;
+
+// Status bar
+- (CGFloat)statusBarHeight;
 @end

@@ -10,9 +10,9 @@
 
 @implementation NSUserDefaults (SFAdditions)
 
-+ (void)setObject:(id)object forKey:(NSString*)key {
++ (void)setObject:(id)aObject forKey:(NSString*)key {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:object forKey:key];
+    [defaults setObject:aObject forKey:key];
     [defaults synchronize];
 }
 
@@ -20,16 +20,16 @@
     return [[NSUserDefaults standardUserDefaults] objectForKey:key];
 }
 
-+ (void)setBool:(BOOL)theBool withKey:(NSString*)key {
++ (void)setBool:(BOOL)aBool forKey:(NSString *)key {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:theBool forKey:key];
+    [defaults setBool:aBool forKey:key];
     [defaults synchronize];
 }
 
-+ (void)setCustomObject:(id)object forKey:(NSString*)key {
++ (void)setCustomObject:(id)aObject forKey:(NSString*)key {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:object];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:aObject];
     [defaults setObject:data forKey:key];
     [defaults synchronize];
 }

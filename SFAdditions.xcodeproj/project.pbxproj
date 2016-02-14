@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		EEA6B4241B799D8D002B0EFB /* UIButton+SFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA6B4231B799D8D002B0EFB /* UIButton+SFAdditions.m */; };
 		EEA6B4271B79ABB4002B0EFB /* NSUserDefaults+SFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA6B4261B79ABB4002B0EFB /* NSUserDefaults+SFAdditions.m */; };
-		EECAA1B41B713492001BA7C4 /* SFAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EECAA1B31B713492001BA7C4 /* SFAdditions.h */; };
-		EECAA1B61B713492001BA7C4 /* SFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EECAA1B51B713492001BA7C4 /* SFAdditions.m */; };
 		EECAA1BC1B713492001BA7C4 /* libSFAdditions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EECAA1B01B713492001BA7C4 /* libSFAdditions.a */; };
 		EECAA1D81B71351B001BA7C4 /* CLLocationManager+SFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EECAA1CB1B71351B001BA7C4 /* CLLocationManager+SFAdditions.m */; };
 		EECAA1D91B71351B001BA7C4 /* MKMapView+SFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EECAA1CD1B71351B001BA7C4 /* MKMapView+SFAdditions.m */; };
@@ -38,7 +36,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				EECAA1B41B713492001BA7C4 /* SFAdditions.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,8 +47,6 @@
 		EEA6B4251B79ABB4002B0EFB /* NSUserDefaults+SFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+SFAdditions.h"; sourceTree = "<group>"; };
 		EEA6B4261B79ABB4002B0EFB /* NSUserDefaults+SFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+SFAdditions.m"; sourceTree = "<group>"; };
 		EECAA1B01B713492001BA7C4 /* libSFAdditions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSFAdditions.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		EECAA1B31B713492001BA7C4 /* SFAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFAdditions.h; sourceTree = "<group>"; };
-		EECAA1B51B713492001BA7C4 /* SFAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFAdditions.m; sourceTree = "<group>"; };
 		EECAA1BB1B713492001BA7C4 /* SFAdditionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SFAdditionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECAA1C11B713492001BA7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EECAA1CA1B71351B001BA7C4 /* CLLocationManager+SFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocationManager+SFAdditions.h"; sourceTree = "<group>"; };
@@ -68,6 +63,7 @@
 		EECAA1D51B71351B001BA7C4 /* UIView+SFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SFAdditions.m"; sourceTree = "<group>"; };
 		EECAA1D61B71351B001BA7C4 /* UIViewController+SFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SFAdditions.h"; sourceTree = "<group>"; };
 		EECAA1D71B71351B001BA7C4 /* UIViewController+SFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SFAdditions.m"; sourceTree = "<group>"; };
+		EEE16D4C1C700276003E015B /* SFAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFAdditions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +106,7 @@
 		EECAA1B21B713492001BA7C4 /* SFAdditions */ = {
 			isa = PBXGroup;
 			children = (
-				EECAA1B31B713492001BA7C4 /* SFAdditions.h */,
-				EECAA1B51B713492001BA7C4 /* SFAdditions.m */,
+				EEE16D4C1C700276003E015B /* SFAdditions.h */,
 				EECAA1CA1B71351B001BA7C4 /* CLLocationManager+SFAdditions.h */,
 				EECAA1CB1B71351B001BA7C4 /* CLLocationManager+SFAdditions.m */,
 				EECAA1CC1B71351B001BA7C4 /* MKMapView+SFAdditions.h */,
@@ -245,7 +240,6 @@
 				EECAA1DA1B71351B001BA7C4 /* NSString+SFAdditions.m in Sources */,
 				EECAA1DC1B71351B001BA7C4 /* UIImage+SFAdditions.m in Sources */,
 				EECAA1D81B71351B001BA7C4 /* CLLocationManager+SFAdditions.m in Sources */,
-				EECAA1B61B713492001BA7C4 /* SFAdditions.m in Sources */,
 				EEA6B4271B79ABB4002B0EFB /* NSUserDefaults+SFAdditions.m in Sources */,
 				EECAA1D91B71351B001BA7C4 /* MKMapView+SFAdditions.m in Sources */,
 			);

@@ -9,7 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UIButton (SFAdditions)
-+ (UIButton*)customButtonWithTitle:(NSString*)theTitle
-                             image:(UIImage*)theImage
-                           spacing:(CGFloat)spacing;
++ (UIButton*)buttonWithTitle:(NSString*)theTitle image:(UIImage*)theImage verticalSpacing:(CGFloat)spacing;
 @end

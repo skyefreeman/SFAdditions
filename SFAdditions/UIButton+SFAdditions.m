@@ -9,11 +9,13 @@
 #import "UIButton+SFAdditions.h"
 
 @implementation UIButton (SFAdditions)
-+ (UIButton*)customButtonWithTitle:(NSString*)theTitle image:(UIImage*)theImage spacing:(CGFloat)spacing {
++ (UIButton*)buttonWithTitle:(NSString*)theTitle image:(UIImage*)theImage verticalSpacing:(CGFloat)spacing {
     UIButton *customButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [customButton setImage:[theImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-    [customButton setTitle:theTitle forState:UIControlStateNormal];
+    if (theTitle) {
+        [customButton setTitle:theTitle forState:UIControlStateNormal];
+    }
     [customButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 
     CGSize imageSize = customButton.imageView.image.size;

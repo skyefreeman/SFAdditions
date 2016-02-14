@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface NSString (SFAdditions)
+@interface NSString (StringAdditions)
 
 - (BOOL)isEmptyString;
 - (BOOL)isNotEmptyString;
@@ -17,8 +17,8 @@
 + (NSString*)stringWithoutNonDecimalCharacters:(NSString*)string;
 + (NSString*)phoneNumberFormattedString:(NSString*)string;
 
-+ (NSString*)intToString:(int)intNum;
-+ (NSString*)integerToString:(NSInteger)integerNum;
-+ (NSString*)CGFloatToString:(CGFloat)floatNum;
+@end
 
+@interface NSNumber (StringAdditions)
+- (NSString*)toString;
 @end

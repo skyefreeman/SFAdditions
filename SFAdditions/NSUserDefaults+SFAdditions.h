@@ -10,13 +10,13 @@
 
 @interface NSUserDefaults (SFAdditions)
 
-+ (void)setObject:(id)object forKey:(NSString*)key;
++ (void)setObject:(id)aObject forKey:(NSString*)key;
 + (id)getObjectForKey:(NSString*)key;
 
-+ (void)setBool:(BOOL)theBool withKey:(NSString*)key;
++ (void)setBool:(BOOL)aBool forKey:(NSString*)key;
 + (BOOL)getBoolForKey:(NSString*)key;
 
-+ (void)setCustomObject:(id)object forKey:(NSString*)key;
++ (void)setCustomObject:(id)aObject forKey:(NSString*)key;
 + (id)getCustomObjectForKey:(NSString*)key;
 
 @end

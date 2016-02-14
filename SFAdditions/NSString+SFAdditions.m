@@ -7,8 +7,8 @@
 
 #import "NSString+SFAdditions.h"
 
+@implementation NSString (StringAdditions)
 
-@implementation NSString (SFAdditions)
 - (BOOL)isNotEmptyString {
     return (self != nil) && ![self isEqual:@""];
 }
@@ -17,6 +17,7 @@
     return [self isEqual:@""] || self == nil;
 }
 
+#pragma mark - String Parsing
 + (NSString*)stringWithoutNonDecimalCharacters:(NSString*)string {
     return [[string componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
 }
@@ -27,22 +28,15 @@
     return formattedPhoneNumber;
 }
 
-#pragma mark - String Convenience
-+ (NSString*)integerToString:(NSInteger)integerNum {
-    return [NSString stringWithFormat:@"%lu",(long)integerNum];
-}
-
-+ (NSString*)CGFloatToString:(CGFloat)floatNum {
-    return [NSString stringWithFormat:@"%fl",floatNum];
-}
-
-+ (NSString*)intToString:(int)intNum {
-    return [NSString stringWithFormat:@"%d",intNum];
-}
-
-#pragma mark - Text Parsing
+#pragma mark - Filename Parsing
 + (NSString*)stringForFileName:(NSString*)fileName ofType:(NSString*)fileType {
     return [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:fileName ofType:fileType] usedEncoding:nil error:nil];
 }
 
+@end
+
+@implementation NSNumber (StringAdditions)
+- (NSString*)toString {
+    return [NSString stringWithFormat:@"%@", self];
+}
 @end

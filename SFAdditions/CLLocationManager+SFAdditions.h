@@ -8,11 +8,21 @@
 #import <CoreLocation/CoreLocation.h>
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, RequestLocationPermissionType) {
+    RequestLocationPermissionTypeWhenInUse,
+    RequestLocationPermissionTypeAlways,
+};
+
 @interface CLLocationManager (SFAdditions)
 
-// DONT FORGET TO SET 'NSLocationWhenInUseUsageDescription' property in app target plist for location services to work :( 
-- (void)requestLocationPermissionWithCompletion:(void(^)(BOOL succeeded))completion;
++ (UIAlertController*)userEnableLocationAlertWhenInUse;
++ (UIAlertController*)userEnableLocationAlertAlways;
 
-+ (UIAlertController*)userEnableLocationAlert;
-
+/* 
+ Don't forget to set 'NSLocationWhenInUseUsageDescription' or 'NSLocationAlwaysUsageDescription'
+ property in app target plist for location services to work.
+ */
+- (void)requestLocationPermission:(RequestLocationPermissionType)type
+                          success:(void (^)())successHandler
+                          failure:(void (^)())failureHandler;
 @end

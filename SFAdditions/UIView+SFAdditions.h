@@ -8,28 +8,30 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (SFAdditions)
+@interface UIView (FrameConvenience)
 
-// Convenience Getters
-- (CGPoint)position;
-- (CGFloat)width;
-- (CGFloat)height;
-- (CGFloat)x;
-- (CGFloat)y;
+@property (nonatomic) CGSize size;
+@property (nonatomic) CGPoint origin;
+@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat height;
+@property (nonatomic) CGFloat x;
+@property (nonatomic) CGFloat y;
 
-- (CGFloat)bottomY;
-- (CGFloat)topY;
+@property (nonatomic) CGFloat topEdge;
+@property (nonatomic) CGFloat bottomEdge;
+@property (nonatomic) CGFloat rightEdge;
+@property (nonatomic) CGFloat leftEdge;
 
-// Convenience Setters
-- (void)setPosition:(CGPoint)position;
-- (void)setSize:(CGSize)size;
-- (void)setX:(CGFloat)x;
-- (void)setY:(CGFloat)y;
+@property (nonatomic) CGPoint topRightPoint;
+@property (nonatomic) CGPoint topLeftPoint;
+@property (nonatomic) CGPoint bottomRightPoint;
+@property (nonatomic) CGPoint bottomLeftPoint;
 
-// Customization on current views
+@end
+
+@interface UIView (DrawHelpers)
+
 + (void)roundCorners:(UIRectCorner)corners forView:(UIView*)view withRadius:(CGFloat)radius;
-
-// Custom view creation
 + (UIView*)circleWithinRect:(CGRect)rect fillColor:(UIColor*)fillColor strokeColor:(UIColor*)strokeColor;
 
 @end

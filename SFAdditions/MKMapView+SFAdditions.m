@@ -8,8 +8,12 @@
 #import "MKMapView+SFAdditions.h"
 
 @implementation MKMapView (SFAdditions)
-
-#pragma mark - Zooming
+- (void)zoomToLocation:(CLLocationCoordinate2D)location radius:(CGFloat)radius animated:(BOOL)animated {
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location,
+                                                                   [MKMapView milesToMeters:radius],
+                                                                   [MKMapView milesToMeters:radius]);
+    [self setRegion:region animated:animated];
+}
 
 - (void)zoomToUserWithRadius:(CGFloat)radius animated:(BOOL)animated {
     MKUserLocation *userlocation = self.userLocation;
@@ -19,17 +23,10 @@
 - (void)zoomToRadius:(CGFloat)radius animated:(BOOL)animated {
     [self zoomToLocation:self.centerCoordinate radius:radius animated:animated];
 }
+@end
 
-- (void)zoomToLocation:(CLLocationCoordinate2D)location radius:(CGFloat)radius animated:(BOOL)animated {
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location,
-                                                                   [MKMapView milesToMeters:radius],
-                                                                   [MKMapView milesToMeters:radius]);
-    [self setRegion:region animated:animated];
-}
-
-#pragma mark - Conversion
+@implementation MKMapView (Conversions)
 + (CGFloat)milesToMeters:(CGFloat)miles {
     return (miles/0.621371f) * 1000;
 }
-
 @end

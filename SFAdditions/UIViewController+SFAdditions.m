@@ -100,4 +100,8 @@
     return 0;
 }
 
+#pragma mark - Status bar convenience 
+- (CGFloat)statusBarHeight {
+    return [[UIApplication sharedApplication] statusBarFrame].size.height;
+}
 @end
